@@ -100,7 +100,9 @@ let timerId = setInterval(function() {
 
         let dragged = null;
         var children = sq_s.childNodes;
+        sq_s.addEventListener('click', function(){return false;});
         for(var i = 0; i < children.length; i++){
+
             children[i].addEventListener("dragstart", function(e){
                 let selected = e.target;
 
@@ -142,7 +144,10 @@ let timerId = setInterval(function() {
     }
     if(RightScores<=2 || RightScores>5){
         console.log('CLICK');
-            sq_s.addEventListener("click", event => {
+        var children = sq_s.childNodes;
+        for(var i = 0; i < children.length; i++){
+
+            children[i].addEventListener("click", event => {
                 if(event.target.parentElement.className === ex_sq.className){   //right!
                     event.target.parentElement.style.border = "4px solid rgb(24, 255, 39)"; 
                     
@@ -178,7 +183,7 @@ let timerId = setInterval(function() {
                 
             });
         }
-
+    }
 
     if (now - startTime >= maxTime) {  
         clearInterval(timerId);
