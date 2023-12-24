@@ -111,6 +111,7 @@ let timerId = setInterval(function() {
                 ex_sq.addEventListener("drop", function(e){
                     console.log(ex_sq.className);//
                     console.log(selected.className);//
+                    selected.parentNode.removeChild(selected);
                     if(ex_sq.className === selected.className){
                         ex_sq.style.border = "4px solid rgb(24, 255, 39)"; 
                         selected=null;
